@@ -49,7 +49,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         
         // admin route only
         .nest(
-            "/admin/admin",
+            "/api",
             Router::new()
                 .route("/categories", post(create_category))
                 .route("/items", post(create_items))

@@ -87,7 +87,7 @@ pub async fn create_category(
     Json(payload): Json<CategoryRequest>,
 ) -> Result<Json<CategoryResponse>, AppError> {
 
-    let res = sqlx::query("INSERT INTO category (name) VALUES (?)")
+    let res = sqlx::query("INSERT INTO categories (name) VALUES (?)")
         .bind(&payload.name)
         .execute(&state.db)
         .await?;

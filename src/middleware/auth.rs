@@ -12,34 +12,6 @@ use crate::models::auth::Claims;
 use crate::models::user::{LoginRequest, LoginUserResponse, UserType, User};
 pub use crate::state::{AppState};
 
-pub async fn auth_middleware(
-    State(state): State<AppState>,  
-    next: Next,
-    mut req: Request,
-    )  -> Result<Response, AppError> 
-
-{
-
-        let auth_header = req.headers().get("Authorization").and_then(|e| e.to_str().ok());
-
-        let token = match auth_header {
-            Some(h) if h.starts_with("Bearer ") => h.trim_start_matches("Bearer ").to_string(),
-            _ => return Err(AppError::Unauthorized("Invalid Authorization header".to_string()))
-        };
-        
-        let token_data = decode::<Claims> (
-            &token, 
-            &DecodingKey::from_secret(state.jwt_secret.as_bytes()), 
-            &Validation::default()
-        ).map_err( |_| AppError::Unauthorized("Invalid or expired token".to_string()))?;
-
-        let user_id = token_data.claims.sub;
-
-        req.extensions_mut().insert(user_id);
-
-        Ok(next.run(req).await)
-}
-
 pub async fn require_admin(
     State(state): State<AppState>,
     mut req: Request,
