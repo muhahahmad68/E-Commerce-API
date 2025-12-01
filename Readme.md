@@ -1,6 +1,5 @@
 Rust E-Commerce API
-Rust E-Commerce API
-
+  
 A backend API built with Rust, Axum, MySQL, and JWT Authentication.
 Supports user registration, login, role-based authorization, products, and orders.
 
@@ -112,12 +111,14 @@ Method	Endpoint	Description
 POST	/api/register	Register user  
 POST	/api/login	Login user  
 GET	/	Server status  
+  
 👤 Customer Routes (Require JWT)  
 Method	Endpoint	Description  
 GET	/api/items	View all items  
 GET	/api/items/{id}	View single item  
 POST	/api/orders	Create order  
 GET	/api/orders	Get user's orders  
+  
 🛠 Admin Routes (Require Admin Role)  
 Method	Endpoint	Description  
 POST	/api/admin/items	Create product item  
@@ -125,6 +126,7 @@ POST	/api/admin/categories	Create category
 GET	/api/admin/users	Get all users  
 GET	/api/admin/users/{id}	Get single user  
 DELETE	/api/admin/users/{id}	Delete user  
+  
 🔐 Authentication Workflow  
   
 User registers → password hashed using bcrypt  
@@ -147,19 +149,7 @@ require_admin
 
 🛠 Technologies Used  
 
-Rust  
-  
-Axum – web framework  
-  
-SQLx – async database ORM  
-  
-MySQL  
-
-JWT – authentication  
-  
-bcrypt – password hashing  
-  
-Tower – middleware layer  
+[Axum – Rust web framework,  SQLx – async database ORM,  MySQL,  JWT – authentication,  bcrypt – password hashing]
   
 🧪 Testing  
   
@@ -173,11 +163,3 @@ Add header to protected routes:
   
 Authorization: Bearer <your_jwt_token>  
   
-🤝 Contributing  
-  
-Pull requests are welcome!  
-For major changes, open an issue first to discuss what you'd like to change.  
-  
-📄 License  
-  
-MIT License © 2025  
