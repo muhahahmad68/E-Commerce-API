@@ -17,17 +17,15 @@ impl UserType {
             UserType::Customer => "customer",
         }
     }
-}
 
-impl UserType {
-
-    pub fn from_str(s: &str) -> UserType {
+     pub fn from_str(s: &str) -> UserType {
         match s.to_lowercase().as_str() {
             "admin" => UserType::Admin,
             "customer" => UserType::Customer,
              &_ => todo!(),
         }
     }
+
 }
 
 // user model representing a user in the database
