@@ -1,4 +1,4 @@
-🛒 Rust E-Commerce API
+Rust E-Commerce API
 
 A backend API built with Rust, Axum, MySQL, and JWT Authentication.
 Supports user registration, login, role-based authorization, products, and orders.
@@ -7,8 +7,6 @@ Supports user registration, login, role-based authorization, products, and order
 ✅ Authentication & Authorization
 
 JWT-based authentication
-
-Middleware that extracts the current user
 
 Role-based access:
 
@@ -46,38 +44,38 @@ Safe query binding
 
 Automatic struct mapping
 
-🧱 Project Structure
-src/
-│
-├── main.rs
-│
-├── db.rs
-│            
-│
-├── middleware/
-│   ├── auth.rs            
-│   └── mod.rs   
-│ 
-│
-├── models/
-│   ├── auth.rs
-│   ├── mod.rs
-│   ├── order.rs
-│   ├── product.rs
-│   └── user.rs
-│
-├── services/
-│   ├── mod.rs             
-│   ├── order.rs
-│   ├── product.rs
-│   └── user.rs
-│   
-│
-├── error.rs
-│
-├── state.rs
-│
-└── config.rs
+Project Structure<br>
+src/<br>
+│<br>
+├── main.rs<br>
+│<br>
+├── db.rs<br>
+│            <br>
+│<br>
+├── middleware/<br>
+│   ├── auth.rs<br>      
+│   └── mod.rs<br>
+│ <br>
+│<br>
+├── models/<br>
+│   ├── auth.rs<br>
+│   ├── mod.rs<br>
+│   ├── order.rs<br>
+│   ├── product.rs<br>
+│   └── user.rs<br>
+│<br>
+├── services/<br>
+│   ├── mod.rs<br>          
+│   ├── order.rs<br>
+│   ├── product.rs<br>
+│   └── user.rs<br>
+│   <br>
+│<br>
+├── error.rs<br>
+│<br>
+├── state.rs<br>
+│ <br>
+└── config.rs<br>
 
 🔧 Configurations
 Environment Variables
@@ -116,7 +114,7 @@ Method	Endpoint	Description
 GET	/api/items	View all items
 GET	/api/items/{id}	View single item
 POST	/api/orders	Create order
-GET	/api/orders	Get user's orders
+GET	/api/orders	Get the user's orders
 🛠 Admin Routes (Require Admin Role)
 Method	Endpoint	Description
 POST	/api/admin/items	Create product item
@@ -172,11 +170,3 @@ Add header to protected routes:
 
 Authorization: Bearer <your_jwt_token>
 
-🤝 Contributing
-
-Pull requests are welcome!
-For major changes, open an issue first to discuss what you'd like to change.
-
-📄 License
-
-MIT License © 2025
