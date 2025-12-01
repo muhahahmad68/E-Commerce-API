@@ -1,4 +1,5 @@
 Rust E-Commerce API
+Rust E-Commerce API
 
 A backend API built with Rust, Axum, MySQL, and JWT Authentication.
 Supports user registration, login, role-based authorization, products, and orders.
